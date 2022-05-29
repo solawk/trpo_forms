@@ -7,7 +7,7 @@ Console.WriteLine("Elements:");
 foreach (var e in allElements)
 {
     Console.WriteLine(e.Name + "(id = " + e.ID + ", category id = " + e.CategoryID + ", category name = " + e.Category.Name
-        + ", data = " + e.Data + ", image URI = " + e.ImageURI + ")");
+        + ", data = " + e.Data + ")");
 }
 
 var allCategories = manager.categories.Read();

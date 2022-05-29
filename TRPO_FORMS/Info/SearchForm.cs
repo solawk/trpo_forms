@@ -36,7 +36,17 @@ namespace TRPO_FORMS.Info
         {
             string query = SearchInput.Text;
 
-            var elements = MainForm.manager.elements.Search(query);
+            List<ElementVM>? elements;
+
+            try
+            {
+                elements = MainForm.manager.elements.Search(query);
+            }
+            catch (Exception)
+            {
+                SearchInput.BackColor = Color.Red;
+                return;
+            }
 
             if (elements == null)
             {

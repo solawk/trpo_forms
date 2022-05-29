@@ -39,14 +39,17 @@
             this.ElUpdateButton = new System.Windows.Forms.Button();
             this.CatUpdateButton = new System.Windows.Forms.Button();
             this.ElSearchButton = new System.Windows.Forms.Button();
+            this.CategoriesLabel = new System.Windows.Forms.Label();
+            this.ElementsLabel = new System.Windows.Forms.Label();
+            this.ExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ElementsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // CategoriesView
             // 
-            this.CategoriesView.Location = new System.Drawing.Point(12, 72);
+            this.CategoriesView.Location = new System.Drawing.Point(12, 93);
             this.CategoriesView.Name = "CategoriesView";
-            this.CategoriesView.Size = new System.Drawing.Size(261, 534);
+            this.CategoriesView.Size = new System.Drawing.Size(230, 456);
             this.CategoriesView.TabIndex = 0;
             this.CategoriesView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.CategoriesView_AfterSelect);
             // 
@@ -59,13 +62,13 @@
             this.ElementsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ElementNames,
             this.ElementData});
-            this.ElementsGrid.Location = new System.Drawing.Point(279, 72);
+            this.ElementsGrid.Location = new System.Drawing.Point(248, 93);
             this.ElementsGrid.Name = "ElementsGrid";
             this.ElementsGrid.ReadOnly = true;
             this.ElementsGrid.RowHeadersVisible = false;
             this.ElementsGrid.RowTemplate.Height = 25;
             this.ElementsGrid.ShowEditingIcon = false;
-            this.ElementsGrid.Size = new System.Drawing.Size(943, 534);
+            this.ElementsGrid.Size = new System.Drawing.Size(724, 456);
             this.ElementsGrid.TabIndex = 2;
             // 
             // ElementNames
@@ -87,7 +90,7 @@
             // 
             // CatCreateButton
             // 
-            this.CatCreateButton.Location = new System.Drawing.Point(12, 12);
+            this.CatCreateButton.Location = new System.Drawing.Point(12, 33);
             this.CatCreateButton.Name = "CatCreateButton";
             this.CatCreateButton.Size = new System.Drawing.Size(59, 54);
             this.CatCreateButton.TabIndex = 3;
@@ -97,7 +100,7 @@
             // 
             // CatDeleteButton
             // 
-            this.CatDeleteButton.Location = new System.Drawing.Point(214, 12);
+            this.CatDeleteButton.Location = new System.Drawing.Point(183, 33);
             this.CatDeleteButton.Name = "CatDeleteButton";
             this.CatDeleteButton.Size = new System.Drawing.Size(59, 54);
             this.CatDeleteButton.TabIndex = 4;
@@ -107,9 +110,9 @@
             // 
             // ElCreateButton
             // 
-            this.ElCreateButton.Location = new System.Drawing.Point(722, 12);
+            this.ElCreateButton.Location = new System.Drawing.Point(367, 33);
             this.ElCreateButton.Name = "ElCreateButton";
-            this.ElCreateButton.Size = new System.Drawing.Size(174, 54);
+            this.ElCreateButton.Size = new System.Drawing.Size(109, 54);
             this.ElCreateButton.TabIndex = 5;
             this.ElCreateButton.Text = "Добавить";
             this.ElCreateButton.UseVisualStyleBackColor = true;
@@ -117,7 +120,7 @@
             // 
             // ElDeleteButton
             // 
-            this.ElDeleteButton.Location = new System.Drawing.Point(1131, 12);
+            this.ElDeleteButton.Location = new System.Drawing.Point(671, 33);
             this.ElDeleteButton.Name = "ElDeleteButton";
             this.ElDeleteButton.Size = new System.Drawing.Size(91, 54);
             this.ElDeleteButton.TabIndex = 6;
@@ -127,9 +130,9 @@
             // 
             // ElUpdateButton
             // 
-            this.ElUpdateButton.Location = new System.Drawing.Point(902, 12);
+            this.ElUpdateButton.Location = new System.Drawing.Point(482, 33);
             this.ElUpdateButton.Name = "ElUpdateButton";
-            this.ElUpdateButton.Size = new System.Drawing.Size(174, 54);
+            this.ElUpdateButton.Size = new System.Drawing.Size(108, 54);
             this.ElUpdateButton.TabIndex = 7;
             this.ElUpdateButton.Text = "Изменить";
             this.ElUpdateButton.UseVisualStyleBackColor = true;
@@ -137,9 +140,9 @@
             // 
             // CatUpdateButton
             // 
-            this.CatUpdateButton.Location = new System.Drawing.Point(77, 12);
+            this.CatUpdateButton.Location = new System.Drawing.Point(77, 33);
             this.CatUpdateButton.Name = "CatUpdateButton";
-            this.CatUpdateButton.Size = new System.Drawing.Size(86, 54);
+            this.CatUpdateButton.Size = new System.Drawing.Size(100, 54);
             this.CatUpdateButton.TabIndex = 8;
             this.CatUpdateButton.Text = "Изменить";
             this.CatUpdateButton.UseVisualStyleBackColor = true;
@@ -147,19 +150,52 @@
             // 
             // ElSearchButton
             // 
-            this.ElSearchButton.Location = new System.Drawing.Point(279, 12);
+            this.ElSearchButton.Location = new System.Drawing.Point(271, 33);
             this.ElSearchButton.Name = "ElSearchButton";
-            this.ElSearchButton.Size = new System.Drawing.Size(158, 54);
+            this.ElSearchButton.Size = new System.Drawing.Size(90, 54);
             this.ElSearchButton.TabIndex = 9;
             this.ElSearchButton.Text = "Поиск";
             this.ElSearchButton.UseVisualStyleBackColor = true;
             this.ElSearchButton.Click += new System.EventHandler(this.ElSearchButton_Click);
             // 
+            // CategoriesLabel
+            // 
+            this.CategoriesLabel.AutoSize = true;
+            this.CategoriesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CategoriesLabel.Location = new System.Drawing.Point(77, 9);
+            this.CategoriesLabel.Name = "CategoriesLabel";
+            this.CategoriesLabel.Size = new System.Drawing.Size(84, 21);
+            this.CategoriesLabel.TabIndex = 10;
+            this.CategoriesLabel.Text = "Категории";
+            // 
+            // ElementsLabel
+            // 
+            this.ElementsLabel.AutoSize = true;
+            this.ElementsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ElementsLabel.Location = new System.Drawing.Point(437, 9);
+            this.ElementsLabel.Name = "ElementsLabel";
+            this.ElementsLabel.Size = new System.Drawing.Size(82, 21);
+            this.ElementsLabel.TabIndex = 11;
+            this.ElementsLabel.Text = "Элементы";
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.Location = new System.Drawing.Point(845, 33);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(127, 54);
+            this.ExportButton.TabIndex = 12;
+            this.ExportButton.Text = "Экспорт базы данных";
+            this.ExportButton.UseVisualStyleBackColor = true;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
             // TRPO_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 618);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.ExportButton);
+            this.Controls.Add(this.ElementsLabel);
+            this.Controls.Add(this.CategoriesLabel);
             this.Controls.Add(this.ElSearchButton);
             this.Controls.Add(this.CatUpdateButton);
             this.Controls.Add(this.ElUpdateButton);
@@ -174,6 +210,7 @@
             this.Load += new System.EventHandler(this.TRPO_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ElementsGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,5 +227,8 @@
         private DataGridViewTextBoxColumn ElementData;
         private Button CatUpdateButton;
         private Button ElSearchButton;
+        private Label CategoriesLabel;
+        private Label ElementsLabel;
+        private Button ExportButton;
     }
 }

@@ -205,6 +205,8 @@ namespace TRPO_FORMS
 
         private void ElCreateButton_Click(object sender, EventArgs e)
         {
+            if (ElementsGrid.Tag == null) return;
+
             var categories = manager.categories.Read();
 
             if (categories.Count == 0)
@@ -363,6 +365,41 @@ namespace TRPO_FORMS
         {
             manager.elements.Delete(id);
             RefreshForm();
+        }
+
+        // Резервное копирование
+
+        private void ExportDatabase()
+        {
+            var file = File.Create("DATABASE.txt");
+
+            var categories = manager.categories.Read();
+
+            foreach (var c in categories)
+            {
+                FileAppend(file, c.ID.ToString() + " - " + c.Name + (c.ParentID != null ? " < " + (int)c.ParentID : "") + "\n");
+
+                var elementsOfCategory = manager.elements.ReadCategory(c.ID);
+
+                foreach (var e in elementsOfCategory)
+                {
+                    FileAppend(file, "-- " + e.ID.ToString() + " - " + e.Name + " - " + e.Data + "\n");
+                }
+            }
+
+            file.Close();
+        }
+
+        private static void FileAppend(FileStream fs, string value)
+        {
+            byte[] info = new System.Text.UTF8Encoding(true).GetBytes(value);
+            fs.Write(info, 0, info.Length);
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+            ExportDatabase();
+            MessageBox.Show("База данных успешно экспортирована в файл DATABASE.txt!");
         }
     }
 }
