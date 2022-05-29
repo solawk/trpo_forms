@@ -10,24 +10,15 @@ using System.Windows.Forms;
 
 namespace TRPO_FORMS.Prompts
 {
-    public partial class CatCreate_Form : Form
+    public partial class CatUpdate_Form : Form
     {
         public TRPO_Form MainForm;
+        public int idOfCategory;
         public List<int> categoryIDs = new List<int>();
 
-        public CatCreate_Form()
+        public CatUpdate_Form()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameInput_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ConfirmButton_Click(object sender, EventArgs e)
@@ -47,7 +38,7 @@ namespace TRPO_FORMS.Prompts
                 parentID = categoryIDs[parentIndex - 1];
             }
 
-            MainForm.CreateCategory(name, parentID);
+            MainForm.UpdateCategory(idOfCategory, name, parentID);
             Close();
         }
     }

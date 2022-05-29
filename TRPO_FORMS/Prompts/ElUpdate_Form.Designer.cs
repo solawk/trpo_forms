@@ -1,6 +1,6 @@
 ﻿namespace TRPO_FORMS.Prompts
 {
-    partial class ElCreate_Form
+    partial class ElUpdate_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.CategoryList = new System.Windows.Forms.ComboBox();
-            this.CategoryLabel = new System.Windows.Forms.Label();
             this.NameInput = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.CategoryList = new System.Windows.Forms.ComboBox();
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.DataInput = new System.Windows.Forms.TextBox();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.ConfirmButton = new System.Windows.Forms.Button();
             this.TableLayout.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // NameInput
+            // 
+            this.NameInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NameInput.Location = new System.Drawing.Point(162, 3);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(313, 23);
+            this.NameInput.TabIndex = 1;
             // 
             // NameLabel
             // 
@@ -48,16 +56,6 @@
             this.NameLabel.TabIndex = 3;
             this.NameLabel.Text = "Название элемента";
             // 
-            // CategoryList
-            // 
-            this.CategoryList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CategoryList.FormattingEnabled = true;
-            this.CategoryList.Location = new System.Drawing.Point(162, 176);
-            this.CategoryList.Name = "CategoryList";
-            this.CategoryList.Size = new System.Drawing.Size(313, 23);
-            this.CategoryList.TabIndex = 2;
-            this.CategoryList.SelectedIndexChanged += new System.EventHandler(this.ParentList_SelectedIndexChanged);
-            // 
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
@@ -67,13 +65,14 @@
             this.CategoryLabel.TabIndex = 4;
             this.CategoryLabel.Text = "Категория";
             // 
-            // NameInput
+            // CategoryList
             // 
-            this.NameInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameInput.Location = new System.Drawing.Point(162, 3);
-            this.NameInput.Name = "NameInput";
-            this.NameInput.Size = new System.Drawing.Size(313, 23);
-            this.NameInput.TabIndex = 1;
+            this.CategoryList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CategoryList.FormattingEnabled = true;
+            this.CategoryList.Location = new System.Drawing.Point(162, 176);
+            this.CategoryList.Name = "CategoryList";
+            this.CategoryList.Size = new System.Drawing.Size(313, 23);
+            this.CategoryList.TabIndex = 2;
             // 
             // TableLayout
             // 
@@ -87,7 +86,7 @@
             this.TableLayout.Controls.Add(this.CategoryLabel, 0, 2);
             this.TableLayout.Controls.Add(this.CategoryList, 1, 2);
             this.TableLayout.Controls.Add(this.ConfirmButton, 1, 3);
-            this.TableLayout.Location = new System.Drawing.Point(12, 25);
+            this.TableLayout.Location = new System.Drawing.Point(12, 12);
             this.TableLayout.Name = "TableLayout";
             this.TableLayout.RowCount = 4;
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86441F));
@@ -95,7 +94,7 @@
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.37255F));
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.39216F));
             this.TableLayout.Size = new System.Drawing.Size(478, 255);
-            this.TableLayout.TabIndex = 6;
+            this.TableLayout.TabIndex = 7;
             // 
             // DataInput
             // 
@@ -105,7 +104,6 @@
             this.DataInput.Name = "DataInput";
             this.DataInput.Size = new System.Drawing.Size(313, 137);
             this.DataInput.TabIndex = 5;
-            this.DataInput.Text = "{}";
             // 
             // DescriptionLabel
             // 
@@ -123,18 +121,18 @@
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(108, 39);
             this.ConfirmButton.TabIndex = 0;
-            this.ConfirmButton.Text = "Создать";
+            this.ConfirmButton.Text = "Сохранить";
             this.ConfirmButton.UseVisualStyleBackColor = true;
             this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
-            // ElCreate_Form
+            // ElUpdate_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 291);
+            this.ClientSize = new System.Drawing.Size(501, 279);
             this.Controls.Add(this.TableLayout);
-            this.Name = "ElCreate_Form";
-            this.Text = "Добавление элемента";
+            this.Name = "ElUpdate_Form";
+            this.Text = "Редактирование";
             this.TableLayout.ResumeLayout(false);
             this.TableLayout.PerformLayout();
             this.ResumeLayout(false);
@@ -143,10 +141,10 @@
 
         #endregion
 
-        private Label NameLabel;
-        private ComboBox CategoryList;
-        private Label CategoryLabel;
         private TextBox NameInput;
+        private Label NameLabel;
+        private Label CategoryLabel;
+        private ComboBox CategoryList;
         private TableLayoutPanel TableLayout;
         private TextBox DataInput;
         private Label DescriptionLabel;

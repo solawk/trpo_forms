@@ -1,6 +1,6 @@
 ﻿namespace TRPO_FORMS.Prompts
 {
-    partial class CatCreate_Form
+    partial class CatUpdate_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ConfirmButton = new System.Windows.Forms.Button();
-            this.NameInput = new System.Windows.Forms.TextBox();
-            this.ParentList = new System.Windows.Forms.ComboBox();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.ParentList = new System.Windows.Forms.ComboBox();
             this.ParentLabel = new System.Windows.Forms.Label();
+            this.NameInput = new System.Windows.Forms.TextBox();
+            this.ConfirmButton = new System.Windows.Forms.Button();
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ConfirmButton
+            // NameLabel
             // 
-            this.ConfirmButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ConfirmButton.Location = new System.Drawing.Point(170, 65);
-            this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(108, 39);
-            this.ConfirmButton.TabIndex = 0;
-            this.ConfirmButton.Text = "Создать";
-            this.ConfirmButton.UseVisualStyleBackColor = true;
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
-            // 
-            // NameInput
-            // 
-            this.NameInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameInput.Location = new System.Drawing.Point(170, 3);
-            this.NameInput.Name = "NameInput";
-            this.NameInput.Size = new System.Drawing.Size(271, 23);
-            this.NameInput.TabIndex = 1;
-            this.NameInput.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(3, 0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(118, 15);
+            this.NameLabel.TabIndex = 3;
+            this.NameLabel.Text = "Название категории";
             // 
             // ParentList
             // 
@@ -66,16 +55,6 @@
             this.ParentList.Size = new System.Drawing.Size(271, 23);
             this.ParentList.TabIndex = 2;
             // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(3, 0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(118, 15);
-            this.NameLabel.TabIndex = 3;
-            this.NameLabel.Text = "Название категории";
-            this.NameLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
             // ParentLabel
             // 
             this.ParentLabel.AutoSize = true;
@@ -84,6 +63,25 @@
             this.ParentLabel.Size = new System.Drawing.Size(140, 15);
             this.ParentLabel.TabIndex = 4;
             this.ParentLabel.Text = "Родительская категория";
+            // 
+            // NameInput
+            // 
+            this.NameInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NameInput.Location = new System.Drawing.Point(170, 3);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(271, 23);
+            this.NameInput.TabIndex = 1;
+            // 
+            // ConfirmButton
+            // 
+            this.ConfirmButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ConfirmButton.Location = new System.Drawing.Point(170, 65);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(108, 39);
+            this.ConfirmButton.TabIndex = 0;
+            this.ConfirmButton.Text = "Сохранить";
+            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // TableLayout
             // 
@@ -102,16 +100,16 @@
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.TableLayout.Size = new System.Drawing.Size(444, 113);
-            this.TableLayout.TabIndex = 5;
+            this.TableLayout.TabIndex = 6;
             // 
-            // CatCreate_Form
+            // CatUpdate_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 133);
+            this.ClientSize = new System.Drawing.Size(465, 135);
             this.Controls.Add(this.TableLayout);
-            this.Name = "CatCreate_Form";
-            this.Text = "Создание категории";
+            this.Name = "CatUpdate_Form";
+            this.Text = "Редактирование";
             this.TableLayout.ResumeLayout(false);
             this.TableLayout.PerformLayout();
             this.ResumeLayout(false);
@@ -120,11 +118,11 @@
 
         #endregion
 
-        private Button ConfirmButton;
-        private TextBox NameInput;
-        private ComboBox ParentList;
         private Label NameLabel;
+        private ComboBox ParentList;
         private Label ParentLabel;
+        private TextBox NameInput;
+        private Button ConfirmButton;
         private TableLayoutPanel TableLayout;
     }
 }

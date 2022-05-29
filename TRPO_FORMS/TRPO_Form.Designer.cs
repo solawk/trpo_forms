@@ -30,12 +30,15 @@
         {
             this.CategoriesView = new System.Windows.Forms.TreeView();
             this.ElementsGrid = new System.Windows.Forms.DataGridView();
+            this.ElementNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ElementData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CatCreateButton = new System.Windows.Forms.Button();
             this.CatDeleteButton = new System.Windows.Forms.Button();
             this.ElCreateButton = new System.Windows.Forms.Button();
             this.ElDeleteButton = new System.Windows.Forms.Button();
-            this.ElementNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ElementData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ElUpdateButton = new System.Windows.Forms.Button();
+            this.CatUpdateButton = new System.Windows.Forms.Button();
+            this.ElSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ElementsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +68,23 @@
             this.ElementsGrid.Size = new System.Drawing.Size(943, 534);
             this.ElementsGrid.TabIndex = 2;
             // 
+            // ElementNames
+            // 
+            this.ElementNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ElementNames.HeaderText = "Название";
+            this.ElementNames.Name = "ElementNames";
+            this.ElementNames.ReadOnly = true;
+            this.ElementNames.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ElementNames.Width = 65;
+            // 
+            // ElementData
+            // 
+            this.ElementData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ElementData.HeaderText = "Характеристики";
+            this.ElementData.Name = "ElementData";
+            this.ElementData.ReadOnly = true;
+            this.ElementData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // CatCreateButton
             // 
             this.CatCreateButton.Location = new System.Drawing.Point(12, 12);
@@ -87,7 +107,7 @@
             // 
             // ElCreateButton
             // 
-            this.ElCreateButton.Location = new System.Drawing.Point(892, 12);
+            this.ElCreateButton.Location = new System.Drawing.Point(722, 12);
             this.ElCreateButton.Name = "ElCreateButton";
             this.ElCreateButton.Size = new System.Drawing.Size(174, 54);
             this.ElCreateButton.TabIndex = 5;
@@ -105,26 +125,44 @@
             this.ElDeleteButton.UseVisualStyleBackColor = true;
             this.ElDeleteButton.Click += new System.EventHandler(this.ElDeleteButton_Click);
             // 
-            // ElementNames
+            // ElUpdateButton
             // 
-            this.ElementNames.HeaderText = "Название";
-            this.ElementNames.Name = "ElementNames";
-            this.ElementNames.ReadOnly = true;
-            this.ElementNames.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ElUpdateButton.Location = new System.Drawing.Point(902, 12);
+            this.ElUpdateButton.Name = "ElUpdateButton";
+            this.ElUpdateButton.Size = new System.Drawing.Size(174, 54);
+            this.ElUpdateButton.TabIndex = 7;
+            this.ElUpdateButton.Text = "Изменить";
+            this.ElUpdateButton.UseVisualStyleBackColor = true;
+            this.ElUpdateButton.Click += new System.EventHandler(this.ElUpdateButton_Click);
             // 
-            // ElementData
+            // CatUpdateButton
             // 
-            this.ElementData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ElementData.HeaderText = "Характеристики";
-            this.ElementData.Name = "ElementData";
-            this.ElementData.ReadOnly = true;
-            this.ElementData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CatUpdateButton.Location = new System.Drawing.Point(77, 12);
+            this.CatUpdateButton.Name = "CatUpdateButton";
+            this.CatUpdateButton.Size = new System.Drawing.Size(86, 54);
+            this.CatUpdateButton.TabIndex = 8;
+            this.CatUpdateButton.Text = "Изменить";
+            this.CatUpdateButton.UseVisualStyleBackColor = true;
+            this.CatUpdateButton.Click += new System.EventHandler(this.CatUpdateButton_Click);
+            // 
+            // ElSearchButton
+            // 
+            this.ElSearchButton.Location = new System.Drawing.Point(279, 12);
+            this.ElSearchButton.Name = "ElSearchButton";
+            this.ElSearchButton.Size = new System.Drawing.Size(158, 54);
+            this.ElSearchButton.TabIndex = 9;
+            this.ElSearchButton.Text = "Поиск";
+            this.ElSearchButton.UseVisualStyleBackColor = true;
+            this.ElSearchButton.Click += new System.EventHandler(this.ElSearchButton_Click);
             // 
             // TRPO_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 618);
+            this.Controls.Add(this.ElSearchButton);
+            this.Controls.Add(this.CatUpdateButton);
+            this.Controls.Add(this.ElUpdateButton);
             this.Controls.Add(this.ElDeleteButton);
             this.Controls.Add(this.ElCreateButton);
             this.Controls.Add(this.CatDeleteButton);
@@ -147,7 +185,10 @@
         private Button CatDeleteButton;
         private Button ElCreateButton;
         private Button ElDeleteButton;
+        private Button ElUpdateButton;
         private DataGridViewTextBoxColumn ElementNames;
         private DataGridViewTextBoxColumn ElementData;
+        private Button CatUpdateButton;
+        private Button ElSearchButton;
     }
 }
