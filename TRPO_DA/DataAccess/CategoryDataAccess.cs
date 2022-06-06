@@ -29,6 +29,8 @@ namespace TRPO_DA.DataAccess
 
         public CategoryVM Create(ICategoryData categoryData)
         {
+            if (nameEmpty(categoryData.Name)) return null;
+
             var created = dataContext.Add(mapper.Map<Category>(categoryData));
 
             try
@@ -70,6 +72,8 @@ namespace TRPO_DA.DataAccess
 
         public CategoryVM Update(ICategoryData categoryData)
         {
+            if (nameEmpty(categoryData.Name)) return null;
+
             Category? result = GetEntry(categoryData.ID);
 
             if (result == null)
@@ -112,14 +116,6 @@ namespace TRPO_DA.DataAccess
             return dataContext.Categories.Where(c => c.ParentID == id).ToList();
         }
 
-        public List<CategoryVM> GetChildrenOfCategory(int id)
-        {
-            var result = GetChildrenOfCategoryEntries(id);
-            var resultViewModel = mapper.Map<List<CategoryVM>>(result);
-
-            return resultViewModel;
-        }
-
         public enum ChildrenProcessAction
         {
             Unparent,
@@ -127,7 +123,7 @@ namespace TRPO_DA.DataAccess
             Delete
         };
 
-        public void ProcessChildrenOfCategory(int id, ChildrenProcessAction action)
+        private void ProcessChildrenOfCategory(int id, ChildrenProcessAction action)
         {
             var children = GetChildrenOfCategoryEntries(id);
 
@@ -153,6 +149,19 @@ namespace TRPO_DA.DataAccess
             }
 
             dataContext.SaveChanges();
+        }
+
+        // Validation
+
+        private bool nameEmpty(string name)
+        {
+            if (name.Trim(' ').Equals(""))
+            {
+                Debug.WriteLine("Name is empty");
+                return true;
+            }
+
+            return false;
         }
     }
 }

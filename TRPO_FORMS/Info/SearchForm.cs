@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TRPO_DM.ViewModels;
+﻿using TRPO_DM.ViewModels;
 
 namespace TRPO_FORMS.Info
 {
@@ -44,7 +35,7 @@ namespace TRPO_FORMS.Info
             }
             catch (Exception)
             {
-                SearchInput.BackColor = Color.Red;
+                MessageBox.Show("Некорректно введён запрос!");
                 return;
             }
 

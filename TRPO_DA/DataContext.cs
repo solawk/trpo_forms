@@ -5,8 +5,8 @@ namespace TRPO_DA
 {
     public class DataContext : DbContext
     {
-        public DbSet<Element> Elements { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Element> Elements { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         public DataContext()
         {

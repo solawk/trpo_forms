@@ -25,7 +25,7 @@ namespace TRPO_FORMS.Prompts
         {
             if (NameInput.Text.Trim(' ').Equals(""))
             {
-                NameInput.BackColor = Color.Red;
+                MessageBox.Show("Пустое название элемента!");
                 return;
             }
 
@@ -37,13 +37,13 @@ namespace TRPO_FORMS.Prompts
             }
             catch (Exception)
             {
-                DataInput.BackColor = Color.Red;
+                MessageBox.Show("Некорректно введены характеристики!");
                 return;
             }
 
             if (DataInput.Text.Trim(' ').Equals(""))
             {
-                DataInput.BackColor = Color.Red;
+                MessageBox.Show("Пустой список характеристик!");
                 return;
             }
 

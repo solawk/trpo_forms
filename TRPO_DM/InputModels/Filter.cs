@@ -20,7 +20,7 @@
 
         public object value; // Значение, с которым происходит сравнение
 
-        public enum Predicate { Equals, GreaterThan, LesserThen };
+        public enum Predicate { Equals, GreaterThan, LesserThan };
 
         public Predicate predicate; // Сравнивать ли значение точно или выбирать всё больше или меньше данного значения
     }

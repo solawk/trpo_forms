@@ -200,6 +200,11 @@ namespace TRPO_FORMS
             if (CategoriesView.SelectedNode == null) return;
 
             int id = (int)CategoriesView.SelectedNode.Tag;
+            var category = manager.categories.Read(id);
+
+            var result = MessageBox.Show("Действительно удалить категорию " + category.Name + "?", "", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
             DeleteCategory(id);
         }
 
@@ -287,7 +292,12 @@ namespace TRPO_FORMS
         {
             if (ElementsGrid.SelectedRows.Count == 0) return;
 
-            int id = (int)ElementsGrid.SelectedRows[0].Tag;
+            int id = (int)ElementsGrid.SelectedRows[0].Tag;           
+            var element = manager.elements.Read(id);
+
+            var result = MessageBox.Show("Действительно удалить элемент " + element.Name + "?", "", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
             DeleteElement(id);
         }
 
@@ -346,7 +356,7 @@ namespace TRPO_FORMS
             string dataString = "";
             foreach (var d in dataDictionary)
             {
-                dataString += d.Key + ": " + d.Value.ToString() + "\n";
+                dataString += d.Key + ": " + d.Value.ToString() + "\r\n";
             }
 
             dataBox.Text = dataString;

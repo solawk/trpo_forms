@@ -10,7 +10,7 @@ namespace TRPO_BL
     {
         public DataManager()
         {
-            DataContext dataContext = new DataContext();
+            dataContext = new DataContext();
 
             var automapperConfig = new MapperConfiguration(cfg =>
             {
@@ -23,15 +23,17 @@ namespace TRPO_BL
 
             Mapper mapper = new Mapper(automapperConfig);
 
-            ElementDataAccess elementDataAccess = new ElementDataAccess(dataContext, mapper);
-            CategoryDataAccess categoryDataAccess = new CategoryDataAccess(dataContext, mapper);
+            elementDataAccess = new ElementDataAccess(dataContext, mapper);
+            categoryDataAccess = new CategoryDataAccess(dataContext, mapper);
 
-            ElementBL elementBL = new ElementBL(elementDataAccess);
-            CategoryBL categoryBL = new CategoryBL(categoryDataAccess);
-
-            elements = elementBL;
-            categories = categoryBL;
+            elements = new ElementBL(elementDataAccess);
+            categories = new CategoryBL(categoryDataAccess);
         }
+
+        private DataContext dataContext;
+
+        private ElementDataAccess elementDataAccess;
+        private CategoryDataAccess categoryDataAccess;
 
         public ElementBL elements;
         public CategoryBL categories;

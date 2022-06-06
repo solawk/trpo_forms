@@ -92,7 +92,7 @@
             // 
             this.CatCreateButton.Location = new System.Drawing.Point(12, 33);
             this.CatCreateButton.Name = "CatCreateButton";
-            this.CatCreateButton.Size = new System.Drawing.Size(59, 54);
+            this.CatCreateButton.Size = new System.Drawing.Size(84, 54);
             this.CatCreateButton.TabIndex = 3;
             this.CatCreateButton.Text = "Создать";
             this.CatCreateButton.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             // ElCreateButton
             // 
-            this.ElCreateButton.Location = new System.Drawing.Point(367, 33);
+            this.ElCreateButton.Location = new System.Drawing.Point(467, 33);
             this.ElCreateButton.Name = "ElCreateButton";
             this.ElCreateButton.Size = new System.Drawing.Size(109, 54);
             this.ElCreateButton.TabIndex = 5;
@@ -120,9 +120,9 @@
             // 
             // ElDeleteButton
             // 
-            this.ElDeleteButton.Location = new System.Drawing.Point(671, 33);
+            this.ElDeleteButton.Location = new System.Drawing.Point(696, 33);
             this.ElDeleteButton.Name = "ElDeleteButton";
-            this.ElDeleteButton.Size = new System.Drawing.Size(91, 54);
+            this.ElDeleteButton.Size = new System.Drawing.Size(66, 54);
             this.ElDeleteButton.TabIndex = 6;
             this.ElDeleteButton.Text = "Удалить";
             this.ElDeleteButton.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             // ElUpdateButton
             // 
-            this.ElUpdateButton.Location = new System.Drawing.Point(482, 33);
+            this.ElUpdateButton.Location = new System.Drawing.Point(582, 33);
             this.ElUpdateButton.Name = "ElUpdateButton";
             this.ElUpdateButton.Size = new System.Drawing.Size(108, 54);
             this.ElUpdateButton.TabIndex = 7;
@@ -140,9 +140,9 @@
             // 
             // CatUpdateButton
             // 
-            this.CatUpdateButton.Location = new System.Drawing.Point(77, 33);
+            this.CatUpdateButton.Location = new System.Drawing.Point(102, 33);
             this.CatUpdateButton.Name = "CatUpdateButton";
-            this.CatUpdateButton.Size = new System.Drawing.Size(100, 54);
+            this.CatUpdateButton.Size = new System.Drawing.Size(75, 54);
             this.CatUpdateButton.TabIndex = 8;
             this.CatUpdateButton.Text = "Изменить";
             this.CatUpdateButton.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             // 
             this.ElSearchButton.Location = new System.Drawing.Point(271, 33);
             this.ElSearchButton.Name = "ElSearchButton";
-            this.ElSearchButton.Size = new System.Drawing.Size(90, 54);
+            this.ElSearchButton.Size = new System.Drawing.Size(163, 54);
             this.ElSearchButton.TabIndex = 9;
             this.ElSearchButton.Text = "Поиск";
             this.ElSearchButton.UseVisualStyleBackColor = true;

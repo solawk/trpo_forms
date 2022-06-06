@@ -25,7 +25,7 @@ namespace TRPO_FORMS.Prompts
         {
             if (NameInput.Text.Trim(' ').Equals(""))
             {
-                NameInput.BackColor = Color.Red;
+                MessageBox.Show("Пустое название категории!");
                 return;
             }
 

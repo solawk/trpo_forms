@@ -21,8 +21,11 @@ namespace TRPO_DA.DataAccess
 
         // CRUD
 
-        public ElementVM Create(IElementData elementData)
+        public ElementVM? Create(IElementData elementData)
         {
+            if (nameEmpty(elementData.Name)) return null;
+            if (dataInvalid(elementData.Data)) return null;
+
             var created = dataContext.Add(mapper.Map<Element>(elementData));
 
             try
@@ -65,6 +68,9 @@ namespace TRPO_DA.DataAccess
 
         public ElementVM Update(IElementData elementData)
         {
+            if (nameEmpty(elementData.Name)) return null;
+            if (dataInvalid(elementData.Data)) return null;
+
             Element? result = dataContext.Elements.Include(e => e.Category).FirstOrDefault(e => e.ID == elementData.ID);
 
             if (result == null)
@@ -167,6 +173,7 @@ namespace TRPO_DA.DataAccess
                         else
                         {
                             bool isValueAString = false;
+                            bool isValueAnInt = f.value.GetType().Equals(typeof(int));
 
                             if (f.predicate == Filter.Predicate.Equals)
                             {
@@ -175,6 +182,7 @@ namespace TRPO_DA.DataAccess
                                     isValueAString = true;
                                 }
                             }
+
                             bool areValuesEqual = false;
 
                             if (isValueAString)
@@ -183,12 +191,22 @@ namespace TRPO_DA.DataAccess
                             }
                             else
                             {
-                                areValuesEqual = (long)eData[f.key] == (long)f.value;
+                                if (isValueAnInt)
+                                {
+                                    areValuesEqual = (long)eData[f.key] == (long)f.value;
+                                }
+                                else
+                                {
+                                    areValuesEqual = (double)eData[f.key] == (double)f.value;
+                                }                               
                             }
 
+                            bool isGreater = isValueAnInt ? (long)eData[f.key] >= (long)f.value : (double)eData[f.key] >= (double)f.value;
+                            bool isLesser = isValueAnInt ? (long)eData[f.key] <= (long)f.value : (double)eData[f.key] <= (double)f.value;
+
                             bool isEqualWhenNeeded = f.predicate == Filter.Predicate.Equals && areValuesEqual;
-                            bool isGreaterWhenNeeded = f.predicate == Filter.Predicate.GreaterThan && (long)eData[f.key] >= (long)f.value;
-                            bool isLesserWhenNeeded = f.predicate == Filter.Predicate.LesserThen && (long)eData[f.key] <= (long)f.value;
+                            bool isGreaterWhenNeeded = f.predicate == Filter.Predicate.GreaterThan && isGreater;
+                            bool isLesserWhenNeeded = f.predicate == Filter.Predicate.LesserThan && isLesser;
 
                             if (!isEqualWhenNeeded && !isGreaterWhenNeeded && !isLesserWhenNeeded)
                             {
@@ -210,6 +228,34 @@ namespace TRPO_DA.DataAccess
             var resultViewModel = mapper.Map<List<ElementVM>>(result);
 
             return resultViewModel;
+        }
+
+        // Validation
+
+        private bool nameEmpty(string name)
+        {
+            if (name.Trim(' ').Equals(""))
+            {
+                Debug.WriteLine("Name is empty");
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool dataInvalid(string data)
+        {
+            try
+            {
+                Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, object>>(data);
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Data is invalid");
+                return true;
+            }
+
+            return false;
         }
     }
 }

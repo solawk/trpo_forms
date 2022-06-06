@@ -58,10 +58,10 @@ namespace TRPO_BL.BusinessLogic
         {
             List<Filter> filters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Filter>>(filtersJson);
 
-            foreach (var f in filters)
+            /*foreach (var f in filters)
             {
                 Console.WriteLine("Searching " + f.type + " " + f.key + " " + f.predicate + " " + f.value);
-            }
+            }*/
 
             return dataAccess.Search(filters);
         }
